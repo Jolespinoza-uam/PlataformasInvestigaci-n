@@ -1,0 +1,69 @@
+1. Crear y cambiar de ramas (git branch, git checkout -b)
+
+En Git, una rama (branch) representa una línea de desarrollo independiente dentro de un proyecto. Su uso permite trabajar en nuevas funciones, correcciones o experimentos sin alterar el código principal.
+Para crear una nueva rama se utiliza el siguiente comando:
+
+git branch nombre-rama
+
+
+Este comando crea la rama, pero no cambia la posición actual de trabajo. Para moverse a una rama existente, se utiliza:
+
+git checkout nombre-rama
+
+
+De igual manera, es posible crear y cambiar a una nueva rama en un solo paso con:
+
+git checkout -b nombre-rama
+
+
+Esta práctica es común cuando se desea iniciar rápidamente el desarrollo de una nueva característica o módulo dentro del proyecto.
+
+2. Hacer cambios en ramas
+
+Al trabajar en una rama, los cambios realizados en los archivos del proyecto no afectan a la rama principal (generalmente llamada main o master). Esto permite mantener la estabilidad del código principal mientras se desarrollan nuevas funciones.
+Los cambios se guardan mediante los siguientes comandos:
+
+git add .
+git commit -m "Descripción del cambio realizado"
+
+
+Posteriormente, para subir la rama y compartir los cambios con otros colaboradores, se utiliza:
+
+git push origin nombre-rama
+
+
+De esta forma, el trabajo realizado queda disponible en el repositorio remoto de GitHub.
+
+3. Pull Requests y revisiones (git diff)
+
+Un Pull Request (PR) es una solicitud para combinar los cambios de una rama con otra, generalmente con la rama principal del proyecto. En GitHub, esta acción se realiza desde la pestaña Pull requests, seleccionando la opción New pull request.
+
+El objetivo del Pull Request es permitir que otros miembros del equipo revisen y validen el código antes de integrarlo. Durante esta revisión, se pueden realizar comentarios, sugerencias o correcciones necesarias.
+
+Además, el comando git diff permite visualizar las diferencias entre versiones de archivos o entre ramas:
+
+git diff
+
+
+Este comando es muy útil para revisar qué partes del código han sido modificadas antes de realizar un commit o una fusión.
+
+4. Solución de conflictos básicos
+
+Los conflictos en Git ocurren cuando dos ramas modifican la misma parte de un archivo y el sistema no puede determinar automáticamente cuál cambio conservar.
+En estos casos, al intentar realizar la fusión (merge), Git muestra el conflicto dentro del archivo afectado con el siguiente formato:
+
+<<<<<<< HEAD
+código actual en tu rama
+=======
+código proveniente de la otra rama
+>>>>>>> nombre-rama
+
+
+Para resolver el conflicto, se debe editar manualmente el archivo, eligiendo qué versión conservar o combinando ambas partes.
+Una vez solucionado, se guardan los cambios y se confirman con los siguientes comandos:
+
+git add archivo.txt
+git commit
+
+
+De esta manera, el conflicto queda resuelto y la fusión puede completarse exitosamente.
