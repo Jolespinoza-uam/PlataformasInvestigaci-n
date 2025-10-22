@@ -1,0 +1,99 @@
+Para crear y cambiar de ramas en Git, se utilizan principalmente los comandos git branch y git checkout -b (o su equivalente moderno git switch -c). Estos comandos son fundamentales para el flujo de trabajo de desarrollo colaborativo y aislado en Git.
+
+Ramas (Branches) en Git
+Una rama en Git es esencialmente un puntero móvil y liviano a uno de los commits en tu historial. El propósito principal de las ramas es permitirte trabajar en diferentes funcionalidades o corregir errores de forma aislada de la línea de desarrollo principal (generalmente main o master).
+
+Aislamiento: Permiten experimentar y desarrollar sin afectar la versión de trabajo estable.
+
+Concurrencia: Varios desarrolladores pueden trabajar en diferentes funcionalidades al mismo tiempo.
+
+Historial Limpio: Solo el código listo y funcional se fusiona con la rama principal.
+
+Creación y Gestión de Ramas
+1. Crear una Nueva Rama: git branch <nombre-rama>
+Este comando simplemente crea una nueva rama que apunta al commit donde te encuentras actualmente, pero no te cambia a ella.
+
+Sintaxis: git branch nueva-funcionalidad
+
+Uso: Se utiliza cuando solo quieres configurar la rama para usarla más tarde, o para crear una rama a partir de un commit específico (agregando el hash del commit al final del comando).
+
+2. Listar las Ramas: git branch (o git branch -a)
+Este comando te muestra todas las ramas locales. La rama actual se marca con un asterisco (*).
+
+Sintaxis: git branch
+
+Opción Útil: git branch -a lista tanto las ramas locales como las ramas remotas.
+
+3. Borrar una Rama: git branch -d <nombre-rama>
+Elimina la rama especificada localmente (solo si ya fue fusionada).
+
+Sintaxis: git branch -d rama-a-borrar
+
+Borrado Forzado: Usa git branch -D <nombre-rama> para forzar el borrado de una rama que aún no ha sido fusionada.
+
+Crear y Cambiar a una Nueva Rama
+1. El Comando Clásico: git checkout -b <nombre-rama>
+Este es el comando tradicional y más común para hacer dos cosas a la vez:
+
+Crea una nueva rama (como git branch <nombre-rama>).
+
+Cambia tu directorio de trabajo (HEAD) a esa nueva rama (como git checkout <nombre-rama>).
+
+Sintaxis: git checkout -b mi-nueva-rama
+
+Resultado: Te sitúas inmediatamente en mi-nueva-rama, listo para trabajar y hacer commits que solo afectarán a esa línea de desarrollo.
+
+Para crear y cambiar de ramas en Git, se utilizan principalmente los comandos git branch y git checkout -b (o su equivalente moderno git switch -c). Estos comandos son fundamentales para el flujo de trabajo de desarrollo colaborativo y aislado en Git.
+
+Creación y Gestión de Ramas
+1. Crear una Nueva Rama: git branch <nombre-rama>
+Este comando simplemente crea una nueva rama que apunta al commit donde te encuentras actualmente, pero no te cambia a ella.
+
+Sintaxis: git branch nueva-funcionalidad
+
+Uso: Se utiliza cuando solo quieres configurar la rama para usarla más tarde, o para crear una rama a partir de un commit específico (agregando el hash del commit al final del comando).
+
+2. Listar las Ramas: git branch (o git branch -a)
+Este comando te muestra todas las ramas locales. La rama actual se marca con un asterisco (*).
+
+Sintaxis: git branch
+
+Opción Útil: git branch -a lista tanto las ramas locales como las ramas remotas.
+
+3. Borrar una Rama: git branch -d <nombre-rama>
+Elimina la rama especificada localmente (solo si ya fue fusionada).
+
+Sintaxis: git branch -d rama-a-borrar
+
+Borrado Forzado: Usa git branch -D <nombre-rama> para forzar el borrado de una rama que aún no ha sido fusionada.
+
+Crear y Cambiar a una Nueva Rama
+1. El Comando Clásico: git checkout -b <nombre-rama>
+Este es el comando tradicional y más común para hacer dos cosas a la vez:
+
+Crea una nueva rama (como git branch <nombre-rama>).
+
+Cambia tu directorio de trabajo (HEAD) a esa nueva rama (como git checkout <nombre-rama>).
+
+Sintaxis: git checkout -b mi-nueva-rama
+
+Resultado: Te sitúas inmediatamente en mi-nueva-rama, listo para trabajar y hacer commits que solo afectarán a esa línea de desarrollo.
+
+2. El Enfoque Moderno: git switch -c <nombre-rama>
+A partir de Git versión 2.23, se introdujo el comando git switch para hacer más clara la intención de cambiar de ramas (separando la funcionalidad de checkout). La bandera -c (de create) funciona de manera idéntica a git checkout -b.
+
+Sintaxis: git switch -c mi-nueva-rama
+
+Ventaja: Separa las responsabilidades, ya que git checkout también se usa para restaurar archivos (lo cual ahora se hace con git restore). Es la forma recomendada hoy en día.
+
+Cambiar a una Rama Existente
+1. Clásico: git checkout <nombre-rama>
+Cambia tu directorio de trabajo a una rama ya existente.
+
+Sintaxis: git checkout develop
+
+2. Moderno: git switch <nombre-rama>
+El comando preferido para cambiar a una rama existente.
+
+Sintaxis: git switch develop
+
